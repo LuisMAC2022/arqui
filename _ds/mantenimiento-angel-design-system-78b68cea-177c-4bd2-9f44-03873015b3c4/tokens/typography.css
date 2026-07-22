@@ -1,0 +1,32 @@
+/* Mantenimiento Angel — Typography tokens
+   One humanist sans (spine) + one monospace (the documentary layer).
+   The signature move: MONO carries the records — dates, folios, addresses, specs.
+   Max two weights per view. Body never below 16px. */
+
+:root {
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Weights — only two used per view */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  /* Type scale (px, fluid-friendly). Body floor is 16px. */
+  --text-display: 3.25rem;  /* 52px — hero */
+  --text-h1: 2.25rem;       /* 36px */
+  --text-h2: 1.625rem;      /* 26px */
+  --text-h3: 1.25rem;       /* 20px */
+  --text-lead: 1.1875rem;   /* 19px — intro paragraphs */
+  --text-base: 1.0625rem;   /* 17px — body, err larger for 55+ readers */
+  --text-small: 0.9375rem;  /* 15px — captions only, not body */
+  --text-mono: 0.9375rem;   /* 15px — documentary line */
+  --text-mono-sm: 0.8125rem;/* 13px — folio/meta chips */
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-body: 1.6;
+
+  --tracking-mono: 0.01em;
+  --tracking-caps: 0.08em;  /* small caps labels */
+}

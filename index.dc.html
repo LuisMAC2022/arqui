@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/mantenimiento-angel-design-system-78b68cea-177c-4bd2-9f44-03873015b3c4/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/mantenimiento-angel-design-system-78b68cea-177c-4bd2-9f44-03873015b3c4/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/mantenimiento-angel-design-system-78b68cea-177c-4bd2-9f44-03873015b3c4/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/mantenimiento-angel-design-system-78b68cea-177c-4bd2-9f44-03873015b3c4/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/mantenimiento-angel-design-system-78b68cea-177c-4bd2-9f44-03873015b3c4/tokens/base.css">
+  <link rel="stylesheet" href="_ds/mantenimiento-angel-design-system-78b68cea-177c-4bd2-9f44-03873015b3c4/styles.css">
+  <script src="_ds/mantenimiento-angel-design-system-78b68cea-177c-4bd2-9f44-03873015b3c4/_ds_bundle.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 88px; }
+    a { color: var(--slate-900); text-underline-offset: 2px; }
+    a:hover { color: var(--patina-700); }
+    @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  </style>
+</helmet>
+
+<div style="background:var(--surface-page);color:var(--text-body);font-family:var(--font-sans);min-height:100vh">
+
+  <!-- HEADER -->
+  <header style="position:sticky;top:0;z-index:40;background:rgba(244,241,236,0.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line-soft)">
+    
+  </header>
+
+  <main id="inicio">
+
+    <!-- HERO -->
+    <section style="max-width:1120px;margin:0 auto;padding:64px 24px 56px;display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center">
+      <div>
+        <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.StatusBadge" tone="neutral" hint-size="auto,28px">Atendemos CDMX y zona metropolitana</x-import>
+        <h1 style="font-size:var(--text-display);margin:20px 0 0;letter-spacing:-0.015em;line-height:1.08">Lo revisamos, le decimos qué encontramos, lo reparamos.</h1>
+        <p style="font-size:var(--text-lead);color:var(--text-muted);margin:20px 0 0;max-width:480px">Mantenimiento integral para casas, comercios y edificios. Diagnóstico técnico, trabajo limpio y reporte fotográfico de cada visita.</p>
+        <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap">
+          <a href="#contacto" style="text-decoration:none">
+            <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.Button" variant="primary" size="lg" hint-size="auto,48px">Solicitar visita de diagnóstico</x-import>
+          </a>
+          <a href="#trabajos" style="text-decoration:none">
+            <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.Button" variant="secondary" size="lg" hint-size="auto,48px">Ver trabajos realizados</x-import>
+          </a>
+        </div>
+        <div style="margin-top:18px">
+          <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.FolioLine" items="{{ heroFolio }}" hint-size="100%,20px"></x-import>
+        </div>
+      </div>
+      <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.BeforeAfter" before="uploads/pre.jpeg" after="uploads/end2.jpeg" scope="Impermeabilización de azotea residencial — retiro de material dañado, primario y sistema acrílico. Eliminada la filtración." folio="{{ heroBaFolio }}" height="{{ h380 }}" hint-size="100%,420px"></x-import>
+    </section>
+
+    <!-- TRUST BAND -->
+    <section style="background:var(--surface-panel);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)">
+      <div style="max-width:1120px;margin:0 auto;padding:32px 24px">
+        <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.TrustStrip" facts="{{ trustFacts }}" hint-size="100%,90px"></x-import>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" style="max-width:1120px;margin:0 auto;padding:72px 24px">
+      <div style="max-width:600px;margin-bottom:40px">
+        <span class="label-caps">Servicios</span>
+        <h2 style="font-size:var(--text-h1);margin:10px 0 0">Cada servicio dice qué incluye — y qué no.</h2>
+        <p style="color:var(--text-muted);font-size:var(--text-lead);margin-top:12px">Cada trabajo parte de un diagnóstico: atendemos la causa, no solo el síntoma.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;align-items:stretch">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+          <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.ServiceCard" title="{{ s.title }}" summary="{{ s.summary }}" includes="{{ s.includes }}" excludes="{{ s.excludes }}" price="{{ s.price }}" hint-size="300px,360px"></x-import>
+        </sc-for>
+      </div>
+    </section>
+
+    <!-- TRABAJOS -->
+    <section id="trabajos" style="background:var(--surface-panel);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)">
+      <div style="max-width:1120px;margin:0 auto;padding:72px 24px">
+        <div style="max-width:600px;margin-bottom:40px">
+          <span class="label-caps">Trabajos realizados</span>
+          <h2 style="font-size:var(--text-h1);margin:10px 0 0">La prueba es el antes y el después.</h2>
+          <p style="color:var(--text-muted);font-size:var(--text-lead);margin-top:12px">Fotos reales de obra, con fecha y folio. Arrastre el control para comparar.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px">
+          <div style="background:var(--surface-card);border:1px solid var(--border-card);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:24px">
+            <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:16px">
+              <span class="label-caps" style="color:var(--ochre)">Impermeabilización</span>
+              <h3 style="font-size:var(--text-h3)">Azotea de casa habitación</h3>
+            </div><x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.BeforeAfter" before="uploads/pre.jpeg" after="uploads/end.jpeg" scope="Retiro de material dañado, resane, primario y aplicación de sistema acrílico rojo sobre losa de concreto." folio="{{ trabajo1Folio }}" height="{{ h340 }}" hint-size="100%,380px"></x-import>
+            
+          </div>
+          <div style="background:var(--surface-card);border:1px solid var(--border-card);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:24px">
+            <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:16px">
+              <span class="label-caps" style="color:var(--ochre)">Impermeabilización</span>
+              <h3 style="font-size:var(--text-h3)">Base de tanque de gas y perímetro</h3>
+            </div>
+            <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.BeforeAfter" before="uploads/mid.jpeg" after="uploads/end2.jpeg" scope="Sellado del desprendimiento bajo el tanque estacionario y renovación del impermeabilizante en todo el perímetro." folio="{{ trabajo2Folio }}" height="{{ h340 }}" hint-size="100%,380px"></x-import>
+          </div>
+        </div>
+
+        <!-- Reporte fotográfico -->
+        <div style="margin-top:40px;display:grid;grid-template-columns:0.9fr 1.1fr;gap:40px;align-items:center;background:var(--surface-card);border:1px solid var(--border-card);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:24px">
+          <figure style="margin:0;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--border-card)">
+            <img src="uploads/mosaico.jpeg" alt="Mosaico de fotos del trabajo de impermeabilización: azotea terminada, tanque de gas, y estado previo de la losa" style="display:block;width:100%;height:100%;object-fit:cover">
+          </figure>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <span class="label-caps">Reporte fotográfico</span>
+            <h3 style="font-size:var(--text-h2)">Cada visita queda documentada.</h3>
+            <p style="font-size:var(--text-base);color:var(--text-body)">Al terminar le entregamos un reporte con fotos fechadas del estado inicial y del trabajo aplicado. Así usted, o la administración del edificio, tiene evidencia de lo que se hizo — no una promesa.</p>
+            <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.FolioLine" items="{{ mosaicoFolio }}" hint-size="100%,20px"></x-import>
+          </div>
+        </div>
+
+        <!-- Testimonios -->
+        <div style="margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+          <sc-for list="{{ testimonios }}" as="t" hint-placeholder-count="3">
+            <div style="background:var(--surface-card);border:1px solid var(--border-card);border-left:3px solid var(--patina);border-radius:var(--radius-md);box-shadow:var(--shadow-card);padding:24px;display:flex;flex-direction:column;gap:14px">
+              <p style="font-size:var(--text-base);color:var(--text-strong);line-height:1.5">{{ t.quote }}</p>
+              <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.FolioLine" items="{{ t.folio }}" hint-size="100%,18px"></x-import>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE (dark ink section) -->
+    <section id="sobre" style="background:var(--surface-ink);color:var(--text-on-dark)">
+      <div style="max-width:1120px;margin:0 auto;padding:72px 24px;display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:center">
+        <div>
+          <span class="label-caps" style="color:rgba(244,241,236,0.6)">Responsable de obra</span>
+          <h2 style="font-size:var(--text-h1);color:var(--plaster);margin:12px 0 0">Un arquitecto responde por cada trabajo.</h2>
+          <p style="font-size:var(--text-lead);color:rgba(244,241,236,0.78);margin-top:14px;max-width:440px">Soy Ángel, arquitecto con más de 10 años reparando y adecuando inmuebles residenciales y comerciales en la Ciudad de México. Cada trabajo parte de un diagnóstico técnico y se entrega con garantía por escrito.</p>
+          <ul style="list-style:none;margin:24px 0 0;padding:0;display:grid;gap:16px">
+            <sc-for list="{{ compromisos }}" as="c" hint-placeholder-count="4">
+              <li style="display:flex;gap:14px;align-items:flex-start;border-top:1px solid rgba(244,241,236,0.14);padding-top:16px">
+                <span style="color:var(--patina);font-weight:700;font-size:18px;line-height:1.4">✓</span>
+                <span style="font-size:17px;color:var(--plaster);line-height:1.5">{{ c }}</span>
+              </li>
+            </sc-for>
+          </ul>
+          <div style="margin-top:24px">
+            <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.FolioLine" color="onDark" items="{{ sobreFolio }}" hint-size="100%,20px"></x-import>
+          </div>
+        </div>
+        <div style="border:1px solid rgba(244,241,236,0.14);border-radius:var(--radius-lg);overflow:hidden;background:rgba(244,241,236,0.04)">
+          <div style="aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;background:repeating-linear-gradient(45deg,rgba(244,241,236,0.06),rgba(244,241,236,0.06) 12px,rgba(244,241,236,0.02) 12px,rgba(244,241,236,0.02) 24px);color:rgba(244,241,236,0.62);font-family:var(--font-mono);font-size:var(--text-mono-sm);line-height:1.6">Foto profesional del arquitecto<br>pendiente de reemplazo<br>(obra real, no banco de imágenes)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" style="max-width:1120px;margin:0 auto;padding:72px 24px">
+      <div style="max-width:1120px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+      <a href="#inicio" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+        
+        <span style="font-weight:600;font-size:18px;color:var(--slate-900);letter-spacing:-0.01em">Arq. Ángel</span>
+        <span style="font-family:var(--font-mono);font-size:12px;color:var(--text-muted);letter-spacing:0.06em;text-transform:uppercase;border-left:1px solid var(--line-firm);padding-left:10px">Mantenimiento integral</span>
+      </a>
+      <nav aria-label="Navegación principal" style="display:flex;align-items:center;gap:28px">
+        <a href="#servicios" style="text-decoration:none;color:var(--text-muted);font-size:16px;font-weight:500">Servicios</a>
+        <a href="#trabajos" style="text-decoration:none;color:var(--text-muted);font-size:16px;font-weight:500">Trabajos</a>
+        <a href="#sobre" style="text-decoration:none;color:var(--text-muted);font-size:16px;font-weight:500">Nosotros</a>
+        <a href="#contacto" style="text-decoration:none">
+          <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.Button" variant="primary" size="sm" hint-size="auto,40px">Solicitar visita</x-import>
+        </a>
+      </nav>
+    </div><div style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:start">
+        
+
+        <div>
+          <span class="label-caps">Solicitar visita</span>
+          
+          <h2 style="font-size:var(--text-h1);margin:12px 0 0">Cuéntenos qué está pasando.</h2><p style="font-size:var(--text-lead);color:var(--text-muted);margin-top:14px;max-width:380px">Solo pedimos lo necesario para responder. Sin compromiso.</p>
+          <dl style="display:grid;gap:20px;margin-top:32px">
+            <div style="display:grid;gap:4px">
+              <dt class="label-caps">Teléfono / WhatsApp</dt>
+              <dd style="margin:0"><a href="tel:+525500000000" style="font-size:var(--text-lead);font-weight:600;text-decoration-color:var(--patina)">55 0000 0000</a></dd>
+            </div>
+            <div style="display:grid;gap:4px">
+              <dt class="label-caps">Correo</dt>
+              <dd style="margin:0"><a href="mailto:contacto@arqangel.mx" style="font-size:var(--text-lead);font-weight:600;text-decoration-color:var(--patina)">contacto@arqangel.mx</a></dd>
+            </div>
+            <div style="display:grid;gap:4px">
+              <dt class="label-caps">Horario</dt>
+              <dd style="margin:0;font-size:var(--text-base)">Lunes a sábado, 8:00 – 19:00 h</dd>
+            </div>
+          </dl>
+          <div style="margin-top:20px">
+            <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.FolioLine" items="{{ contactoFolio }}" hint-size="100%,20px"></x-import>
+          </div>
+          <a href="{{ waHref }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;margin-top:24px;background:#1FA855;color:#fff;font-weight:600;font-size:16px;padding:12px 20px;border-radius:var(--radius-md);text-decoration:none">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.5.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.82 9.82 0 0 1-1.51-5.26c0-5.45 4.43-9.88 9.9-9.88a9.83 9.83 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88zm8.41-18.29A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4z"></path></svg>
+            Escríbenos por WhatsApp
+          </a>
+        </div><div style="background:var(--surface-card);border:1px solid var(--border-card);border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:32px">
+          <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:18px">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+              <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.Field" label="Nombre" placeholder="Su nombre" value="{{ nombre }}" onChange="{{ onNombre }}" hint-size="100%,74px"></x-import>
+              <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.Field" label="Teléfono" placeholder="55 0000 0000" value="{{ telefono }}" onChange="{{ onTelefono }}" hint-size="100%,74px"></x-import>
+            </div>
+            <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.Field" label="Correo (opcional si dio teléfono)" placeholder="correo@ejemplo.mx" value="{{ correo }}" onChange="{{ onCorreo }}" hint-size="100%,74px"></x-import>
+            <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.Field" label="¿Qué trabajo necesita?" as="textarea" placeholder="Ej. Tengo una filtración en la azotea y quiero impermeabilizar." value="{{ mensaje }}" onChange="{{ onMensaje }}" hint-size="100%,120px"></x-import>
+            <label style="display:flex;gap:10px;align-items:flex-start;font-size:var(--text-small);color:var(--text-muted);cursor:pointer">
+              <input type="checkbox" checked="{{ aviso }}" onChange="{{ onAviso }}" style="width:18px;height:18px;margin-top:2px;accent-color:var(--patina);flex:0 0 auto">
+              <span>Acepto el <a href="#" onClick="{{ openAviso }}" style="text-decoration-color:var(--patina)">aviso de privacidad</a>: sus datos solo se usan para responder su solicitud.</span>
+            </label>
+            <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.Button" type="submit" variant="primary" size="lg" full="{{ true }}" hint-size="100%,48px">Enviar solicitud</x-import>
+            <sc-if value="{{ hasEstado }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:0;font-size:var(--text-small);color:var(--patina-700);font-weight:600">{{ estado }}</p>
+            </sc-if>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--surface-page);border-top:1px solid var(--line-soft)">
+    <div style="max-width:1120px;margin:0 auto;padding:40px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px">
+      <a href="#inicio" style="display:flex;align-items:center;gap:10px;text-decoration:none">
+        <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+          <rect x="1" y="1" width="24" height="24" rx="3" fill="none" stroke="#1C2B3A" stroke-width="1.5"></rect>
+          <path d="M5 18 L13 6 L21 18" fill="none" stroke="#1C2B3A" stroke-width="1.5" stroke-linejoin="round"></path>
+          <circle cx="13" cy="18" r="1.6" fill="#2F7A52"></circle>
+        </svg>
+        <span style="font-weight:600;font-size:18px;color:var(--slate-900)">Arq. Ángel — Mantenimiento Integral</span>
+      </a>
+      <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.FolioLine" items="{{ footerFolio }}" hint-size="100%,20px"></x-import>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a href="{{ waHref }}" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position:fixed;right:24px;bottom:24px;z-index:50;width:58px;height:58px;border-radius:50%;background:#1FA855;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-raised);border:2px solid #fff">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.5.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.82 9.82 0 0 1-1.51-5.26c0-5.45 4.43-9.88 9.9-9.88a9.83 9.83 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88zm8.41-18.29A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.9c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9 0-3.18-1.24-6.16-3.48-8.4z"></path></svg>
+  </a>
+
+  <!-- Aviso de privacidad -->
+  <sc-if value="{{ showAviso }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeAviso }}" style="position:fixed;inset:0;z-index:60;background:rgba(28,43,58,0.45);display:flex;align-items:center;justify-content:center;padding:24px">
+      <div onClick="{{ stop }}" style="max-width:34rem;background:var(--surface-card);border:1px solid var(--line-firm);border-radius:var(--radius-lg);box-shadow:var(--shadow-raised);padding:32px">
+        <h2 style="font-size:var(--text-h2);margin-bottom:12px">Aviso de privacidad simplificado</h2>
+        <p style="font-size:var(--text-base);color:var(--text-body);margin-bottom:12px"><strong>Arq. Ángel — Mantenimiento Integral</strong> es responsable del uso de los datos que nos proporciona (nombre, teléfono y/o correo, y descripción de su solicitud).</p>
+        <p style="font-size:var(--text-base);color:var(--text-body);margin-bottom:12px">Sus datos se utilizan únicamente para responder y dar seguimiento a su solicitud. No se comparten con terceros ni se usan con fines publicitarios.</p>
+        <p style="font-size:var(--text-base);color:var(--text-body);margin-bottom:20px">Puede solicitar la eliminación de sus datos escribiendo a contacto@arqangel.mx, conforme a la LFPDPPP.</p>
+        <x-import component-from-global-scope="MantenimientoAngelDesignSystem_78b68c.Button" variant="secondary" onClick="{{ closeAviso }}" hint-size="auto,48px">Cerrar</x-import>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { nombre:'', telefono:'', correo:'', mensaje:'', aviso:false, estado:'', showAviso:false };
+  WHATSAPP = '525500000000';
+
+  field = (k) => (e) => {
+    const v = e && e.target ? (e.target.type === 'checkbox' ? e.target.checked : e.target.value) : e;
+    this.setState({ [k]: v });
+  };
+
+  submit = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    const { nombre, telefono, correo, mensaje, aviso } = this.state;
+    if (!nombre.trim() || !mensaje.trim()) {
+      this.setState({ estado: 'Por favor escriba su nombre y describa el trabajo que necesita.' }); return;
+    }
+    if (!telefono.trim() && !correo.trim()) {
+      this.setState({ estado: 'Necesitamos su teléfono o su correo para poder contactarle.' }); return;
+    }
+    if (!aviso) {
+      this.setState({ estado: 'Por favor acepte el aviso de privacidad.' }); return;
+    }
+    const texto = `Hola, soy ${nombre}.\n\nTrabajo que necesito: ${mensaje}\n\nContacto: ${telefono || correo}`;
+    window.open(`https://wa.me/${this.WHATSAPP}?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
+    this.setState({ estado: '¡Gracias! Su solicitud está lista para enviarse por WhatsApp. Le contactaremos en menos de 24 horas.', nombre:'', telefono:'', correo:'', mensaje:'', aviso:false });
+  };
+
+  renderVals() {
+    const s = this.state;
+    return {
+      h380: 380,
+      h340: 340,
+      heroFolio: ['Respondemos en menos de 24 h', 'Visita de diagnóstico · $650'],
+      heroBaFolio: ['2026-03-14', 'Folio MTO-0412', 'Sistema acrílico'],
+      trabajo1Folio: ['2026-03-14', 'Folio MTO-0412', 'Azotea · 96 m²'],
+      trabajo2Folio: ['2026-02-27', 'Folio MTO-0389', 'Tanque estacionario'],
+      mosaicoFolio: ['Reporte MTO-0412', '2026-03-14', 'Antes · Proceso · Después'],
+      sobreFolio: ['Cédula profesional a solicitud', 'Garantía por escrito'],
+      contactoFolio: ['Cobertura: CDMX y zona metropolitana', 'Respuesta < 24 h'],
+      footerFolio: ['Arq. Ángel — Mantenimiento Integral', 'Tel. 55 0000 0000', 'contacto@arqangel.mx'],
+      trustFacts: [
+        { value: '+10 años', label: 'De experiencia en CDMX' },
+        { value: 'Arquitecto', label: 'Responsable de cada obra' },
+        { value: 'Por escrito', label: 'Garantía en cada servicio' },
+        { value: '< 24 h', label: 'Tiempo de respuesta' },
+      ],
+      compromisos: [
+        'Diagnóstico técnico: atendemos la causa, no solo el síntoma.',
+        'Trabajo limpio y ordenado, respetando su espacio.',
+        'Reporte fotográfico fechado al terminar cada visita.',
+        'Garantía por escrito en todos los trabajos.',
+      ],
+      services: [
+        { title: 'Mantenimiento preventivo y correctivo', summary: 'Revisiones programadas y reparaciones puntuales para evitar problemas mayores.', includes: ['Inspección con reporte fotográfico', 'Reparaciones puntuales', 'Calendario de revisiones'], excludes: ['Obra nueva de gran escala'], price: 'Diagnóstico · $650' },
+        { title: 'Plomería e instalaciones hidráulicas', summary: 'Fugas, tinacos, bombas, cambio de tuberías y muebles de baño.', includes: ['Localización de fuga oculta', 'Cambio de tubería y muebles', 'Prueba de presión'], excludes: ['Tratamiento de cisternas'], price: 'Diagnóstico · $550' },
+        { title: 'Electricidad', summary: 'Cortos, contactos, centros de carga y cableado seguro conforme a norma.', includes: ['Revisión de tablero', 'Cableado y contactos', 'Reporte de cargas'], excludes: ['Acometida con CFE', 'Plantas de emergencia'], price: 'Diagnóstico · $600' },
+        { title: 'Pintura y acabados', summary: 'Interiores y exteriores con preparación de superficie y acabado duradero.', includes: ['Preparación y resanes', 'Sellado de superficie', 'Acabado uniforme'], excludes: ['Trabajos en altura sin andamio'], price: 'Cotización sin costo' },
+        { title: 'Impermeabilización', summary: 'Azoteas y muros protegidos contra filtraciones, con material adecuado.', includes: ['Retiro de material dañado', 'Primario y sistema acrílico', 'Reporte antes/después'], excludes: ['Reconstrucción de losa'], price: 'Diagnóstico · $650' },
+        { title: 'Albañilería y remodelaciones ligeras', summary: 'Reparaciones menores, muros, aplanados y adecuación de espacios.', includes: ['Muros y aplanados', 'Adecuaciones menores', 'Criterio de arquitecto'], excludes: ['Ampliaciones estructurales'], price: 'Cotización sin costo' },
+      ],
+      testimonios: [
+        { quote: '«Llegó puntual, explicó el problema con claridad y dejó todo limpio. Se nota la diferencia de que sea arquitecto.»', folio: ['— Laura', 'Del Valle'] },
+        { quote: '«Nos impermeabilizó la azotea antes de las lluvias y no volvimos a tener filtraciones.»', folio: ['— Ricardo', 'Coyoacán'] },
+        { quote: '«Le hablamos por una fuga y terminó dándole mantenimiento a todo el local. Precio justo y garantía.»', folio: ['— Sofía', 'Portales'] },
+      ],
+      nombre: s.nombre, telefono: s.telefono, correo: s.correo, mensaje: s.mensaje, aviso: s.aviso,
+      onNombre: this.field('nombre'), onTelefono: this.field('telefono'), onCorreo: this.field('correo'),
+      onMensaje: this.field('mensaje'), onAviso: this.field('aviso'),
+      estado: s.estado, hasEstado: !!s.estado,
+      submit: this.submit,
+      showAviso: s.showAviso,
+      openAviso: (e) => { if (e && e.preventDefault) e.preventDefault(); this.setState({ showAviso: true }); },
+      closeAviso: () => this.setState({ showAviso: false }),
+      stop: (e) => { if (e && e.stopPropagation) e.stopPropagation(); },
+      waHref: `https://wa.me/${this.WHATSAPP}?text=${encodeURIComponent('Hola, me interesa un servicio de mantenimiento')}`,
+    };
+  }
+}
+</script>
+</body>
+</html>

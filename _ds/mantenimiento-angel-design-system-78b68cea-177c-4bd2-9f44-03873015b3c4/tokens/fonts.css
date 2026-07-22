@@ -1,0 +1,7 @@
+/* Mantenimiento Angel — Webfonts
+   IBM Plex Sans + IBM Plex Mono, loaded from Google Fonts.
+   NOTE: substitution flag — these are served from Google's CDN rather than
+   self-hosted binaries. To self-host, drop the .woff2 files into assets/fonts/
+   and replace this @import with local @font-face rules. */
+
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap");

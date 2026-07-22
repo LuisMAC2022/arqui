@@ -1,0 +1,47 @@
+/* Mantenimiento Angel — Color tokens
+   Palette drawn from building materials: slate, plaster, stone, patina, ochre, brick.
+   Discipline: 90% slate-on-plaster. Green/ochre/red are SIGNAL, never decoration. */
+
+:root {
+  /* --- Base material palette --- */
+  --slate-900: #1C2B3A;   /* Blueprint slate — body text, headers, structural lines */
+  --slate-600: #3D5266;   /* Mid slate — subdued text, captions */
+  --plaster:   #F4F1EC;   /* Warm plaster — page background, not clinical white */
+  --stone:     #E8E3DA;   /* Deeper stone — cards, sections, separation */
+  --near-white:#FCFBF9;   /* Near-white — cards floating on plaster */
+
+  --patina:    #2F7A52;   /* Patina green — done/good/complete, primary CTA */
+  --patina-700:#256340;   /* hover/press on patina */
+  --ochre:     #B8761D;   /* Ochre — genuine attention only, never decoration */
+  --brick:     #B23A2E;   /* Brick red — true errors / destructive only */
+
+  /* Derived structural lines (slate at low alpha — never invent new hues) */
+  --line-soft:  rgba(28, 43, 58, 0.10);
+  --line-firm:  rgba(28, 43, 58, 0.18);
+  --line-strong:rgba(28, 43, 58, 0.32);
+
+  /* --- Semantic aliases (use these in components) --- */
+  --text-strong:   var(--slate-900);
+  --text-body:     var(--slate-900);
+  --text-muted:    var(--slate-600);
+  --text-on-dark:  var(--plaster);
+  --text-on-accent:var(--near-white);
+
+  --surface-page:  var(--plaster);
+  --surface-panel: var(--stone);
+  --surface-card:  var(--near-white);
+  --surface-ink:   var(--slate-900);   /* dark sections, footers */
+
+  --border-card:   var(--line-soft);
+  --border-input:  var(--line-firm);
+  --border-focus:  var(--slate-600);
+
+  --action:        var(--patina);      /* the single green CTA */
+  --action-hover:  var(--patina-700);
+  --attention:     var(--ochre);       /* a flag that needs a human */
+  --danger:        var(--brick);       /* genuine error / destruction */
+
+  --state-resolved:var(--patina);
+  --state-attention:var(--ochre);
+  --state-error:   var(--brick);
+}
